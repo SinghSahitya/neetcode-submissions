@@ -1,0 +1,10 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        first = strs[0]
+
+        for i, char in enumerate(first):
+            for word in strs:
+                if i >= len(word) or word[i] != char:
+                    return first[:i]
+
+        return first
